@@ -3,9 +3,9 @@ name: deploy to Github package 🚀
 on:
   workflow_dispatch:
   push:
-    branches : 
-    - master
-    - develop
+    tags : 
+    - '*'
+   
 
 jobs:
   publish : 
