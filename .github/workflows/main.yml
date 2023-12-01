@@ -7,10 +7,6 @@ on:
     - master
     - develop
 
-env:
- NUGET_AUTH_TOKEN: ${{secrets.PACKAGE_TOKEN}}
-
-
 jobs:
   publish : 
     runs-on : ubuntu-latest
