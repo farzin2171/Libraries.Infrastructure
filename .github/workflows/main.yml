@@ -32,5 +32,5 @@ jobs:
          dotnet pack  ./src/WT.Logging/WT.Logging.csproj --configuration Release --no-build
          dotnet nuget push ./src/WT.Logging/bin/Release/*.nupkg --source https://nuget.pkg.github.com/Farzin2171/index.json  
         env:
-         NUGET_AUTH_TOKEN: ${{secrets.PACKAGE_TOKEN}}
+         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
