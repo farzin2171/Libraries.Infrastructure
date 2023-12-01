@@ -5,11 +5,11 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
-		<PackageId>WT.LoggingLibrary</PackageId>
+		<PackageId>WT.Library.Logging</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>Farzin</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageTags>dotnet core library</PackageTags>
+		<PackageTags>dotnet core library (Logging)</PackageTags>
 
 	</PropertyGroup>
 
