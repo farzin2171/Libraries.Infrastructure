@@ -28,7 +28,7 @@ jobs:
         
       - name: Build and publis Logging
         run: |
-         dotnet build --configuration Release --project ./src/WT.Logging/WT.Logging.csproj
-         dotnet pack --no-build --configuration Release --project ./src/WT.Logging/WT.Logging.csproj
+         dotnet build ./src/WT.Logging/WT.Logging.csproj --configuration Release --no-restore
+         dotnet pack  ./src/WT.Logging/WT.Logging.csproj --configuration Release --no-build
          dotnet nuget push ./src/WT.Logging/bin/Release/*.nupkg --source https://nuget.pkg.github.com/Farzin2171/index.json
       
