@@ -1,0 +1,34 @@
+name: deploy to Github package 🚀
+
+on:
+  workflow_dispatch:
+  push:
+    branches : 
+    - master
+    - develop
+
+env:
+ NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
+jobs:
+  publish : 
+    runs-on : ubuntu-latest
+  
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version : '6.0.x'
+          
+      - name: Restore dependencies
+        run: dotnet restore 
+        
+      - name: Build and publis Logging
+        run: |
+         dotnet build --configuration Release --project ./src/WT.Logging/WT.Logging.csproj
+         dotnet pack --no-build --configuration Release --project ./src/WT.Logging/WT.Logging.csproj
+         dotnet nuget push Library1/bin/Release/*.nupkg --source https://nuget.pkg.github.com/Farzin2171/index.json
+      
