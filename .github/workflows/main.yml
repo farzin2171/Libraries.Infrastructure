@@ -27,3 +27,9 @@ jobs:
          dotnet build ./src/WT.Logging/WT.Logging.csproj --configuration Release --no-restore
          dotnet pack  ./src/WT.Logging/WT.Logging.csproj --configuration Release --no-build
          dotnet nuget push ./src/WT.Logging/bin/Release/*.nupkg --source https://nuget.pkg.github.com/Farzin2171/index.json  --api-key ${{secrets.PACKAGE_TOKEN}}
+
+      - name: Build and publis LibraryTools
+        run: |
+         dotnet build ./src/LibraryTools/LibraryTools.csproj --configuration Release --no-restore
+         dotnet pack  /src/LibraryTools/LibraryTools.csproj --configuration Release --no-build
+         dotnet nuget push ./src/LibraryTools/bin/Release/*.nupkg --source https://nuget.pkg.github.com/Farzin2171/index.json  --api-key ${{secrets.PACKAGE_TOKEN}}
